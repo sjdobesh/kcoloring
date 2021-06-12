@@ -139,7 +139,7 @@ void config(node** root) {
         // add each entry into this root config
         for (int k = 0; k < K; k++)
           (*root)->configs[i][k] += (*root)->children[j]
-                                          ->configs[max_compatible][k];
+                                           ->configs[max_compatible][k];
       }
 }
 
@@ -151,9 +151,8 @@ void post_fix(node** root) {
     for (int i = 0; i < (*root)->num_child; i++)
       post_fix(&((*root)->children[i]));
   // find optimal configurations
-  for (int i = 0; i < (*root)->num_child; i++) {
+  for (int i = 0; i < (*root)->num_child; i++)
     config(root);
-  }
 }
 
 // PHASE 2 //====================================
